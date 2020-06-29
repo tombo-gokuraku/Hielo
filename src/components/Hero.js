@@ -1,7 +1,16 @@
 import React from "react"
+import Slider from "../components/slider"
 
-function Hero() {
-  return <div>this is hero</div>
+// import tw, { css } from "twin.macro"
+import "twin.macro"
+
+function Hero({ children }) {
+  return (
+    <div className="relative">
+      {children}
+      <Slider />
+    </div>
+  )
 }
 
 export default Hero

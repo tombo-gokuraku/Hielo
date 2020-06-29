@@ -17,9 +17,10 @@ import Footer from "./Footer"
 const Layout = () => {
   return (
     <>
-      <Header />
       <main>
-        <Hero />
+        <Hero>
+          <Header />
+        </Hero>
         <Card />
         <SectionTitle />
       </main>
