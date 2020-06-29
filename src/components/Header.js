@@ -1,31 +1,15 @@
-import PropTypes from "prop-types"
 import React from "react"
+import "twin.macro"
 
 const Header = () => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}></h1>
+  <header tw="px-3 py-5 bg-transparent">
+    <div>
+      <a href="/" tw="text-lg text-white hover:text-opacity-75">
+        Hielo{" "}
+        <span tw="text-base text-white text-opacity-75">by TEMPLATED</span>
+      </a>
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
