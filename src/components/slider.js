@@ -28,6 +28,7 @@ const Button = styled.div`
 
 const Heading = styled.div`
   ${tw`flex flex-col items-center justify-center p-8`}
+  min-height: inherit;
 `
 
 const Slider = () => {
