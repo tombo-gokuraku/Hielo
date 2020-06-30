@@ -2,7 +2,7 @@ import React from "react"
 import "twin.macro"
 
 const Header = () => (
-  <header tw="absolute top-0 left-0 px-3 py-5 bg-transparent">
+  <header tw="absolute top-0 left-0 z-10 px-3 py-5 bg-transparent">
     <div>
       <a href="/" tw="text-lg text-white hover:text-opacity-75">
         Hielo{" "}
