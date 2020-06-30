@@ -1,12 +1,30 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 
-import "twin.macro"
+import styled from "styled-components"
+import tw from "twin.macro"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import ReactSlick from "react-slick"
+
+const Dots = styled.div`
+  ${tw`absolute bottom-0 bg-transparent`}
+  &&& {
+    ul {
+      ${tw`m-0`}
+    }
+  }
+`
+const Button = styled.div`
+  &&& {
+    ${tw`flex items-center justify-center w-2 h-2 p-0 mx-auto my-0 bg-white rounded-full opacity-25 active:opacity-100 hocus:opacity-100`}
+  }
+  .slick-active &&& {
+    ${tw`opacity-100`}
+  }
+`
 
 const ComponentName = () => {
   const sliderSettings = {
@@ -17,6 +35,14 @@ const ComponentName = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+    appendDots: dots => (
+      <Dots>
+        {" "}
+        <ul>{dots}</ul>{" "}
+      </Dots>
+    ),
+    customPaging: () => <Button></Button>,
   }
 
   const data = useStaticQuery(graphql`
@@ -64,11 +90,14 @@ const ComponentName = () => {
     <ReactSlick {...sliderSettings}>
       {data.allFile.images.map((image, index) => {
         return (
-          <article key={image.id}>
-            <Image fluid={image.childImageSharp.fluid} tw="z-0" />
-            <p tw="z-10">{slidesText[index].desc}</p>
-            <h2 tw="z-10">{slidesText[index].title}</h2>
-          </article>
+          <BackgroundImage
+            tag={`article`}
+            fluid={image.childImageSharp.fluid}
+            key={image.id}
+          >
+            <p tw="text-xl text-white">{slidesText[index].desc}</p>
+            <h2 tw="text-3xl text-white">{slidesText[index].title}</h2>
+          </BackgroundImage>
         )
       })}
     </ReactSlick>
