@@ -3,15 +3,15 @@ import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import styled from "styled-components"
-import tw from "twin.macro"
+import tw, { css } from "twin.macro"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import ReactSlick from "react-slick"
 
 const Dots = styled.div`
-  ${tw`absolute bottom-0 bg-transparent`}
   &&& {
+    ${tw`absolute bottom-0 bg-transparent`}
     ul {
       ${tw`m-0`}
     }
@@ -98,6 +98,12 @@ const Slider = () => {
             tag={`article`}
             fluid={image.childImageSharp.fluid}
             key={image.id}
+            css={[
+              css`
+                min-height: 50vh;
+              `,
+              tw`bg-cover`,
+            ]}
           >
             <Heading>
               <p tw="text-xl text-center text-white">
