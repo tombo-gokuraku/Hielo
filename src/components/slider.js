@@ -26,7 +26,11 @@ const Button = styled.div`
   }
 `
 
-const ComponentName = () => {
+const Heading = styled.div`
+  ${tw`flex flex-col items-center justify-center p-8`}
+`
+
+const Slider = () => {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -95,8 +99,14 @@ const ComponentName = () => {
             fluid={image.childImageSharp.fluid}
             key={image.id}
           >
-            <p tw="text-xl text-white">{slidesText[index].desc}</p>
-            <h2 tw="text-3xl text-white">{slidesText[index].title}</h2>
+            <Heading>
+              <p tw="text-xl text-center text-white">
+                {slidesText[index].desc}
+              </p>
+              <h2 tw="text-6xl text-center text-white">
+                {slidesText[index].title}
+              </h2>
+            </Heading>
           </BackgroundImage>
         )
       })}
@@ -104,4 +114,4 @@ const ComponentName = () => {
   )
 }
 
-export default ComponentName
+export default Slider
