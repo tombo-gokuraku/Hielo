@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import ReactSlick from "react-slick"
 
+import Heading from "./Heading"
+
 const Dots = styled.div`
   &&& {
     ${tw`absolute bottom-0 bg-transparent`}
@@ -25,12 +27,6 @@ const Button = styled.div`
     ${tw`opacity-100`}
   }
 `
-
-const Heading = styled.div`
-  ${tw`flex flex-col items-center justify-center p-8`}
-  min-height: inherit;
-`
-
 const Slider = () => {
   const sliderSettings = {
     dots: true,
@@ -70,8 +66,10 @@ const Slider = () => {
 
   const slidesText = [
     {
-      desc: `A free responsive web site template by <a href="https://templated.co">TEMPLATED</a>`,
+      desc: "A free responsive web site template by",
       title: "Hielo",
+      linkUrl: "https://templated.co",
+      linkText: "TEMPLATED",
     },
     {
       desc: `Lorem ipsum dolor sit amet nullam feugiat`,
@@ -106,14 +104,13 @@ const Slider = () => {
               tw`bg-cover`,
             ]}
           >
-            <Heading>
-              <p tw="text-xl text-center text-white">
-                {slidesText[index].desc}
-              </p>
-              <h2 tw="text-6xl text-center text-white">
-                {slidesText[index].title}
-              </h2>
-            </Heading>
+            <Heading
+              title={slidesText[index].title}
+              desc={slidesText[index].desc}
+              linkUrl={slidesText[index].linkUrl}
+              linkText={slidesText[index].linkText}
+              hero
+            />
           </BackgroundImage>
         )
       })}
