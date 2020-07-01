@@ -15,7 +15,7 @@ function Heading({ title, desc, linkUrl, linkText, hero }) {
         tw`flex flex-col items-center justify-center p-8 divide-y`,
       ]}
     >
-      <p tw="text-xl text-center text-white uppercase text-opacity-75">
+      <p tw="pb-6 text-xl text-center text-white uppercase text-opacity-75">
         {desc}{" "}
         {linkUrl && linkText && (
           <a tw="text-white text-opacity-100" href={linkUrl}>
