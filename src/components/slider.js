@@ -90,7 +90,14 @@ const Slider = () => {
   ]
 
   return (
-    <ReactSlick {...sliderSettings}>
+    <ReactSlick
+      {...sliderSettings}
+      css={[
+        css`
+          min-height: 75vh;
+        `,
+      ]}
+    >
       {data.allFile.images.map((image, index) => {
         return (
           <BackgroundImage
@@ -99,7 +106,7 @@ const Slider = () => {
             key={image.id}
             css={[
               css`
-                min-height: 50vh;
+                min-height: 75vh;
               `,
               tw`bg-cover`,
             ]}
