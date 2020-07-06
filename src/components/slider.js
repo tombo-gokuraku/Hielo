@@ -33,6 +33,7 @@ const Slider = () => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 5000,
+    fade: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -54,7 +55,7 @@ const Slider = () => {
       ) {
         images: nodes {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 1500, quality: 85) {
               ...GatsbyImageSharpFluid
             }
           }
