@@ -15,7 +15,7 @@ function Heading({ title, desc, linkUrl, linkText, hero }) {
         tw`flex flex-col items-center justify-center p-8 divide-y`,
       ]}
     >
-      <p tw="pb-6 text-xl text-center text-white uppercase text-opacity-75">
+      <p tw="pb-6 text-xl font-light text-center text-white uppercase text-opacity-75">
         {desc}{" "}
         {linkUrl && linkText && (
           <a tw="text-white text-opacity-100" href={linkUrl}>
@@ -32,7 +32,7 @@ function Heading({ title, desc, linkUrl, linkText, hero }) {
 const Title = styled.h2`
   ${tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl`}
   ${breaks.greaterThan("md")`
-    font-size: 7rem;
+    font-size: 6rem;
 `}
 `
 
