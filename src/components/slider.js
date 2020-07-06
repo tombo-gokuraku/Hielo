@@ -104,10 +104,12 @@ const Slider = () => {
             tag={`article`}
             fluid={image.childImageSharp.fluid}
             key={image.id}
+            backgroundColor={`#999`}
             css={[
               css`
                 min-height: 75vh;
                 background-position: top center;
+                background-blend-mode: darken;
               `,
               tw`bg-cover`,
             ]}
