@@ -13,11 +13,14 @@ import Card from "./Card"
 import SectionTitle from "./SectionTitle"
 import Footer from "./Footer"
 
+import Button from "./Button"
+
 const Layout = () => {
   return (
     <>
       <main>
         <Hero></Hero>
+        <Button>Learn More</Button>
         <Card />
         <SectionTitle />
       </main>
