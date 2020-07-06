@@ -107,6 +107,7 @@ const Slider = () => {
             css={[
               css`
                 min-height: 75vh;
+                background-position: top center;
               `,
               tw`bg-cover`,
             ]}
