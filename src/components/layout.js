@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "./Header"
 import Hero from "./Hero"
 import Card from "./Card"
 import SectionTitle from "./SectionTitle"
@@ -18,9 +17,7 @@ const Layout = () => {
   return (
     <>
       <main>
-        <Hero>
-          <Header />
-        </Hero>
+        <Hero></Hero>
         <Card />
         <SectionTitle />
       </main>
