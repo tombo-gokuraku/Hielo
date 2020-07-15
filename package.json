@@ -63,7 +63,7 @@
     "twin": {
       "preset": "styled-components",
       "config": "./tailwind.config.js",
-      "debug": true,
+      "debug": false,
       "autoCssProp": true
     }
   }
