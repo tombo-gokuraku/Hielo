@@ -1,7 +1,12 @@
 import React from "react"
+import "twin.macro"
 
 function Footer() {
-  return <div>this is Footer</div>
+  return (
+    <footer tw="text-gray-500 bg-black">
+      <div css={{ color: "red" }}>icon space</div>
+    </footer>
+  )
 }
 
 export default Footer
