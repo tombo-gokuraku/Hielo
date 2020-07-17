@@ -1,16 +1,19 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Slider from "../components/slider"
 
-// import tw, { css } from "twin.macro"
 import "twin.macro"
 
 function Hero({ children }) {
   return (
-    <div className="relative">
+    <div tw="relative">
       {children}
       <Slider />
     </div>
   )
 }
 
+Hero.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 export default Hero

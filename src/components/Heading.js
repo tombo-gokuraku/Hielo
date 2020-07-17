@@ -1,4 +1,6 @@
-import React from "react"
+import PropTypes from "prop-types"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 import tw, { styled, css } from "twin.macro"
 
 import { mq } from "../styles/breaks"
@@ -46,4 +48,11 @@ const Title = styled.h2(({ large }) => [
     `,
 ])
 
+Heading.propTypes = {
+  title: PropTypes.string,
+  desc: PropTypes.string,
+  linkUrl: PropTypes.string,
+  linkText: PropTypes.string,
+  large: PropTypes.bool,
+}
 export default Heading
