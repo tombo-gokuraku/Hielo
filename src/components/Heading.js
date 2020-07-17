@@ -28,20 +28,20 @@ function Heading({ title, desc, linkUrl, linkText, large }) {
 }
 
 const Title = styled.h2(({ large }) => [
-  tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl`,
+  tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl sm:w-2/3`,
   large &&
     css`
       ${mq[0]} {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
       ${mq[1]} {
-        font-size: 6rem;
+        font-size: 4rem;
       }
       ${mq[2]} {
-        font-size: 7rem;
+        font-size: 4.5rem;
       }
       ${mq[3]} {
-        font-size: 8rem;
+        font-size: 5rem;
       }
     `,
 ])
