@@ -2,8 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
-import styled from "styled-components"
-import tw, { css } from "twin.macro"
+import tw, { css, styled } from "twin.macro"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
