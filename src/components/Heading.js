@@ -1,6 +1,8 @@
 import React from "react"
 import tw, { styled, css } from "twin.macro"
 
+import { mq } from "../styles/breaks"
+
 function Heading({ title, desc, linkUrl, linkText, large }) {
   return (
     <div
@@ -29,7 +31,18 @@ const Title = styled.h2(({ large }) => [
   tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl`,
   large &&
     css`
-      font-size: 6rem;
+      ${mq[0]} {
+        font-size: 4rem;
+      }
+      ${mq[1]} {
+        font-size: 6rem;
+      }
+      ${mq[2]} {
+        font-size: 7rem;
+      }
+      ${mq[3]} {
+        font-size: 8rem;
+      }
     `,
 ])
 
