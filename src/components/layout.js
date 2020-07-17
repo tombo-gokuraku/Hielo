@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import Theme from "./Theme"
 
 import Hero from "./Hero"
-import Card from "./Card"
+// import Card from "./Card"
 import SectionTitle from "./SectionTitle"
 import Footer from "./Footer"
 
@@ -22,7 +22,7 @@ const Layout = () => {
       <main>
         <Hero></Hero>
         <Button>Learn More</Button>
-        <Card />
+        {/* <Card /> */}
         <SectionTitle />
       </main>
       <Footer />

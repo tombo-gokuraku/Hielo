@@ -1,11 +1,7 @@
 import React from "react"
-import styled from "styled-components"
-import tw, { css } from "twin.macro"
-import breaks from "../styles/styled-breaks"
-// ${tw`flex flex-col items-center justify-center p-8`}
-// min-height: inherit;
+import tw, { styled, css } from "twin.macro"
 
-function Heading({ title, desc, linkUrl, linkText, hero }) {
+function Heading({ title, desc, linkUrl, linkText, large }) {
   return (
     <div
       css={[
@@ -24,16 +20,17 @@ function Heading({ title, desc, linkUrl, linkText, hero }) {
         )}
       </p>
       {/* <div tw="w-1/2"></div> */}
-      <Title>{title}</Title>
+      <Title large={large}>{title}</Title>
     </div>
   )
 }
 
-const Title = styled.h2`
-  ${tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl`}
-  ${breaks.greaterThan("md")`
-    font-size: 6rem;
-`}
-`
+const Title = styled.h2(({ large }) => [
+  tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl`,
+  large &&
+    css`
+      font-size: 6rem;
+    `,
+])
 
 export default Heading

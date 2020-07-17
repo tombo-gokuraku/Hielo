@@ -120,7 +120,7 @@ const Slider = () => {
               desc={slidesText[index].desc}
               linkUrl={slidesText[index].linkUrl}
               linkText={slidesText[index].linkText}
-              hero
+              large
             />
           </BackgroundImage>
         )
