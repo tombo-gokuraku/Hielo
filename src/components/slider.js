@@ -21,7 +21,7 @@ const Dots = styled.div`
 `
 const Button = styled.div`
   &&& {
-    ${tw`flex items-center justify-center w-3 h-3 p-0 mx-auto my-0 bg-white rounded-full opacity-25 active:opacity-100 hocus:opacity-100`}
+    ${tw`flex items-center justify-center w-3 h-3 p-0 mx-auto my-0 bg-white rounded-full opacity-25 active:opacity-100 hover:opacity-100`}
   }
   .slick-active &&& {
     ${tw`opacity-100`}
