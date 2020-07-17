@@ -1,9 +1,9 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
-import styled from "styled-components"
-import tw, { css } from "twin.macro"
+import tw, { css, styled } from "twin.macro"
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -21,12 +21,22 @@ const Dots = styled.div`
 `
 const Button = styled.div`
   &&& {
-    ${tw`flex items-center justify-center w-2 h-2 p-0 mx-auto my-0 bg-white rounded-full opacity-25 active:opacity-100 hocus:opacity-100`}
+    ${tw`flex items-center justify-center w-3 h-3 p-0 mx-auto my-0 bg-white rounded-full opacity-25 active:opacity-100 hocus:opacity-100`}
   }
   .slick-active &&& {
     ${tw`opacity-100`}
   }
 `
+
+const sliderDots = dots => (
+  <Dots>
+    {" "}
+    <ul>{dots}</ul>{" "}
+  </Dots>
+)
+
+const sliderCustomPaging = () => <Button></Button>
+
 const Slider = () => {
   const sliderSettings = {
     dots: true,
@@ -38,13 +48,8 @@ const Slider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    appendDots: dots => (
-      <Dots>
-        {" "}
-        <ul>{dots}</ul>{" "}
-      </Dots>
-    ),
-    customPaging: () => <Button></Button>,
+    appendDots: sliderDots,
+    customPaging: sliderCustomPaging,
   }
 
   const data = useStaticQuery(graphql`
@@ -120,7 +125,7 @@ const Slider = () => {
               desc={slidesText[index].desc}
               linkUrl={slidesText[index].linkUrl}
               linkText={slidesText[index].linkText}
-              hero
+              large
             />
           </BackgroundImage>
         )

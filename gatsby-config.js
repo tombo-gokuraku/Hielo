@@ -30,17 +30,8 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-eslint-v2",
-      options: {
-        test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|cache|public)/,
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
-      },
-    },
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-eslint",
+    "gatsby-plugin-emotion",
+    "@danbruegge/gatsby-plugin-stylelint",
   ],
 }

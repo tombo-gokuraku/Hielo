@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import tw, { css } from "twin.macro"
-import breaks from "../styles/styled-breaks"
-// ${tw`flex flex-col items-center justify-center p-8`}
-// min-height: inherit;
+import PropTypes from "prop-types"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import tw, { styled, css } from "twin.macro"
 
-function Heading({ title, desc, linkUrl, linkText, hero }) {
+import { mq } from "../styles/breaks"
+
+function Heading({ title, desc, linkUrl, linkText, large }) {
   return (
     <div
       css={[
@@ -24,16 +24,35 @@ function Heading({ title, desc, linkUrl, linkText, hero }) {
         )}
       </p>
       {/* <div tw="w-1/2"></div> */}
-      <Title>{title}</Title>
+      <Title large={large}>{title}</Title>
     </div>
   )
 }
 
-const Title = styled.h2`
-  ${tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl`}
-  ${breaks.greaterThan("md")`
-    font-size: 6rem;
-`}
-`
+const Title = styled.h2(({ large }) => [
+  tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl sm:w-2/3`,
+  large &&
+    css`
+      ${mq[0]} {
+        font-size: 3.5rem;
+      }
+      ${mq[1]} {
+        font-size: 4rem;
+      }
+      ${mq[2]} {
+        font-size: 4.5rem;
+      }
+      ${mq[3]} {
+        font-size: 5rem;
+      }
+    `,
+])
 
+Heading.propTypes = {
+  title: PropTypes.string,
+  desc: PropTypes.string,
+  linkUrl: PropTypes.string,
+  linkText: PropTypes.string,
+  large: PropTypes.bool,
+}
 export default Heading
