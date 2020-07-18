@@ -3,10 +3,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Hero from "./Hero"
-import Cards from "./Cards"
-import SectionTitle from "./SectionTitle"
-import Button from "./Button"
+import Hero from "../components/Hero"
+import Cards from "../components/Cards"
+import SectionTitle from "../components/SectionTitle"
+import Button from "../components/Button"
 
 const IndexPage = () => (
   <Layout>
