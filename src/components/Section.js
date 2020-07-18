@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import Heading from "../components/Heading"
+import PropTypes from "prop-types"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -18,32 +18,37 @@ const query = graphql`
   }
 `
 
-function SectionTitle() {
+function Section({ children, bg }) {
   const data = useStaticQuery(query)
   return (
     <section>
-      <BackgroundImage
-        tag={`article`}
-        fluid={[
-          "radial-gradient(circle at center, rgba(0,0,0, 0.45), rgba(0,0,0, 0.25))",
-          data.file.childImageSharp.fluid,
-        ]}
-        css={[
-          css`
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-          `,
-        ]}
-      >
-        <Heading
-          title="Morbi maximus justo"
-          desc="NAM VEL ANTE SIT AMET LIBERO SCELERISQUE FACILISIS ELEIFEND VITAE URNA"
-          white
-        />
-      </BackgroundImage>
+      {bg ? (
+        <BackgroundImage
+          tag={`article`}
+          fluid={[
+            "radial-gradient(circle at center, rgba(0,0,0, 0.75), rgba(0,0,0, 0.75))",
+            data.file.childImageSharp.fluid,
+          ]}
+          css={[
+            css`
+              background-position: center;
+              background-size: cover;
+              background-attachment: fixed;
+            `,
+          ]}
+        >
+          <div tw="pt-12 pb-8 mx-auto my-0 max-w-screen-xl">{children}</div>
+        </BackgroundImage>
+      ) : (
+        <div tw="pt-12 pb-8 mx-auto my-0 max-w-screen-xl">{children}</div>
+      )}
     </section>
   )
 }
 
-export default SectionTitle
+Section.propTypes = {
+  children: PropTypes.node.isRequired,
+  bg: PropTypes.bool,
+}
+
+export default Section
