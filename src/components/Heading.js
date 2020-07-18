@@ -14,7 +14,8 @@ function Heading({ title, desc, banner, white }) {
         css`
           min-height: inherit;
         `,
-        tw`flex flex-col items-center justify-center p-8 divide-y`,
+        tw`flex flex-col items-center justify-center p-2 divide-y`,
+        banner && tw`p-8`,
       ]}
     >
       <Paragraph banner={banner}>{desc}</Paragraph>
@@ -42,7 +43,7 @@ const Title = styled.h2(({ banner, white }) => [
       ${mq[3]} {
         font-size: 5rem;
       }
-      ${tw`w-full text-white sm:w-2/3`};
+      ${tw`text-white`};
     `,
   white && tw`text-white`,
 ])
