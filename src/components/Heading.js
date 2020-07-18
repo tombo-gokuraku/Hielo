@@ -5,7 +5,7 @@ import tw, { styled, css } from "twin.macro"
 
 import { mq } from "../styles/breaks"
 
-function Heading({ title, desc, linkUrl, linkText, large }) {
+function Heading({ title, desc, large }) {
   return (
     <div
       css={[
@@ -17,13 +17,7 @@ function Heading({ title, desc, linkUrl, linkText, large }) {
     >
       <p tw="pb-6 text-xl font-light text-center text-white uppercase text-opacity-75">
         {desc}{" "}
-        {linkUrl && linkText && (
-          <a tw="text-white text-opacity-100" href={linkUrl}>
-            {linkText}
-          </a>
-        )}
       </p>
-      {/* <div tw="w-1/2"></div> */}
       <Title large={large}>{title}</Title>
     </div>
   )
@@ -51,8 +45,6 @@ const Title = styled.h2(({ large }) => [
 Heading.propTypes = {
   title: PropTypes.string,
   desc: PropTypes.string,
-  linkUrl: PropTypes.string,
-  linkText: PropTypes.string,
   large: PropTypes.bool,
 }
 export default Heading

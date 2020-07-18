@@ -72,10 +72,8 @@ const Slider = () => {
 
   const slidesText = [
     {
-      desc: "A free responsive web site template by",
+      desc: "A free responsive web site",
       title: "Hielo",
-      linkUrl: "https://templated.co",
-      linkText: "TEMPLATED",
     },
     {
       desc: `Lorem ipsum dolor sit amet nullam feugiat`,
@@ -123,8 +121,6 @@ const Slider = () => {
             <Heading
               title={slidesText[index].title}
               desc={slidesText[index].desc}
-              linkUrl={slidesText[index].linkUrl}
-              linkText={slidesText[index].linkText}
               large
             />
           </BackgroundImage>
