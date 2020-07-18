@@ -8,7 +8,7 @@ function Cards() {
     <Card>
       <Heading
         title="Lorem ipsum dolor"
-        description="MAECENAS SAPIEN FEUGIAT EX PURUS"
+        desc="MAECENAS SAPIEN FEUGIAT EX PURUS"
         tw="text-black"
       />
     </Card>
