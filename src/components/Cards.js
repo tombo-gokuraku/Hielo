@@ -47,10 +47,10 @@ function Cards() {
     },
   ]
   return (
-    <section>
+    <section tw="flex flex-wrap content-center justify-around pt-24 pb-16">
       {cardData.map(card => {
         return (
-          <div tw="w-full max-w-screen-sm" key={card.id}>
+          <div tw="w-full mx-2 mb-6 max-w-screen-sm" key={card.id}>
             <Image fluid={card.image} tw="w-full" />
             <div tw="flex flex-col items-center p-6 bg-white">
               <Heading title={card.title} desc={card.subTitle} />
