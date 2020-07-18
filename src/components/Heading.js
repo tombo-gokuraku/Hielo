@@ -5,7 +5,7 @@ import tw, { styled, css } from "twin.macro"
 
 import { mq } from "../styles/breaks"
 
-function Heading({ title, desc, large }) {
+function Heading({ title, desc, banner }) {
   return (
     <div
       css={[
@@ -15,17 +15,15 @@ function Heading({ title, desc, large }) {
         tw`flex flex-col items-center justify-center p-8 divide-y`,
       ]}
     >
-      <p tw="pb-6 text-xl font-light text-center text-white uppercase text-opacity-75">
-        {desc}{" "}
-      </p>
-      <Title large={large}>{title}</Title>
+      <Paragraph banner={banner}>{desc}</Paragraph>
+      <Title banner={banner}>{title}</Title>
     </div>
   )
 }
 
-const Title = styled.h2(({ large }) => [
-  tw`w-1/2 text-4xl font-light text-center text-white sm:text-6xl sm:w-2/3`,
-  large &&
+const Title = styled.h2(({ banner }) => [
+  tw`text-4xl font-light text-center`,
+  banner &&
     css`
       ${mq[0]} {
         font-size: 3.5rem;
@@ -39,12 +37,18 @@ const Title = styled.h2(({ large }) => [
       ${mq[3]} {
         font-size: 5rem;
       }
+      ${tw`w-1/2 text-white sm:w-2/3`};
     `,
+])
+
+const Paragraph = styled.p(({ banner }) => [
+  tw`pb-6 font-light text-center text-gray-500 uppercase`,
+  banner && tw`text-base text-white text-opacity-75`,
 ])
 
 Heading.propTypes = {
   title: PropTypes.string,
   desc: PropTypes.string,
-  large: PropTypes.bool,
+  banner: PropTypes.bool,
 }
 export default Heading

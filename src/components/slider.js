@@ -121,7 +121,7 @@ const Slider = () => {
             <Heading
               title={slidesText[index].title}
               desc={slidesText[index].desc}
-              large
+              banner
             />
           </BackgroundImage>
         )
