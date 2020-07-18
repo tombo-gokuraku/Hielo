@@ -1,30 +1,13 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import Theme from "./Theme"
 
-import Hero from "./Hero"
-import Cards from "./Cards"
-import SectionTitle from "./SectionTitle"
 import Footer from "./Footer"
 
-import Button from "./Button"
-
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <Theme>
-      <main>
-        <Hero></Hero>
-        <Button>Learn More</Button>
-        <Cards />
-        <SectionTitle />
-      </main>
+      <main>{children}</main>
       <Footer />
     </Theme>
   )
