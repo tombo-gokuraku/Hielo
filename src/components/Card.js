@@ -5,11 +5,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import "twin.macro"
 
 import PropTypes from "prop-types"
+
 const query = graphql`
   {
     file(relativePath: { eq: "pic02.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 600) {
+        fluid(maxWidth: 640) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -21,7 +22,7 @@ function Card({ image, children }) {
   const data = useStaticQuery(query)
   return (
     <div tw="max-w-screen-sm">
-      <Image fluid={data.file.childImageSharp.fluid} />
+      <Image fluid={data.file.childImageSharp.fluid} tw="w-full" />
       {children}
     </div>
   )
