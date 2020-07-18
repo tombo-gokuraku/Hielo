@@ -30,8 +30,7 @@ const Button = styled.div`
 
 const sliderDots = dots => (
   <Dots>
-    {" "}
-    <ul>{dots}</ul>{" "}
+    <ul>{dots}</ul>
   </Dots>
 )
 
