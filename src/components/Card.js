@@ -1,7 +1,10 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import "twin.macro"
 
+import PropTypes from "prop-types"
 const query = graphql`
   {
     file(relativePath: { eq: "pic02.jpg" }) {
@@ -14,19 +17,18 @@ const query = graphql`
   }
 `
 
-function Card({ image, description, children }) {
+function Card({ image, children }) {
   const data = useStaticQuery(query)
   return (
-    <div
-      css={`
-        max-width: 550px;
-      `}
-    >
+    <div tw="max-w-screen-sm">
       <Image fluid={data.file.childImageSharp.fluid} />
       {children}
-      <p>{description}</p>
     </div>
   )
 }
 
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
+  image: PropTypes.object,
+}
 export default Card

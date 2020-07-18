@@ -5,6 +5,8 @@ import tw, { styled, css } from "twin.macro"
 
 import { mq } from "../styles/breaks"
 
+import Paragraph from "./Paragraph"
+
 function Heading({ title, desc, banner, white }) {
   return (
     <div
@@ -41,11 +43,6 @@ const Title = styled.h2(({ banner, white }) => [
       ${tw`w-full text-white sm:w-2/3`};
     `,
   white && tw`text-white`,
-])
-
-const Paragraph = styled.p(({ banner }) => [
-  tw`pb-2 font-light text-center text-gray-500 uppercase`,
-  banner && tw`pb-6 text-base text-white text-opacity-75`,
 ])
 
 Heading.propTypes = {
