@@ -5,14 +5,14 @@ import SEO from "../components/seo"
 
 import Hero from "../components/Hero"
 import Cards from "../components/Cards"
-import SectionTitle from "../components/SectionTitle"
+import Section from "../components/Section"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Hero></Hero>
+    <Hero />
     <Cards />
-    <SectionTitle />
+    <Section />
   </Layout>
 )
 

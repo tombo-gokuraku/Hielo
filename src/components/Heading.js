@@ -18,7 +18,9 @@ function Heading({ title, desc, banner, white }) {
       ]}
     >
       <Paragraph banner={banner}>{desc}</Paragraph>
-      <Title banner={banner}>{title}</Title>
+      <Title banner={banner} white={white}>
+        {title}
+      </Title>
     </div>
   )
 }
