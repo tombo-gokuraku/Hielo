@@ -52,7 +52,7 @@ function Cards() {
         return (
           <div tw="w-full max-w-screen-sm" key={card.id}>
             <Image fluid={card.image} tw="w-full" />
-            <div tw="flex flex-col items-center p-6 ">
+            <div tw="flex flex-col items-center p-6 bg-white">
               <Heading title={card.title} desc={card.subTitle} />
               <Paragraph>{card.description}</Paragraph>
               <Button>Learn More</Button>
