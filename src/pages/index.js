@@ -13,7 +13,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Hero />
-    <Cards />
+    <Section>
+      <Cards />
+    </Section>
     <Section bg>
       <Heading
         title="Morbi maximus justo"
