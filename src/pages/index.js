@@ -7,6 +7,7 @@ import Hero from "../components/Hero"
 import Cards from "../components/Cards"
 import Section from "../components/Section"
 import Heading from "../components/Heading"
+import Gallery from "../components/Gallery"
 
 const IndexPage = () => (
   <Layout>
@@ -25,6 +26,7 @@ const IndexPage = () => (
         title="Morbi maximus justo"
         desc="NAM VEL ANTE SIT AMET LIBERO SCELERISQUE FACILISIS ELEIFEND VITAE URNA"
       />
+      <Gallery />
     </Section>
   </Layout>
 )
