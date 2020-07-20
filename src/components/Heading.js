@@ -18,7 +18,9 @@ function Heading({ title, desc, banner, white }) {
         banner && tw`p-8`,
       ]}
     >
-      <Paragraph banner={banner}>{desc}</Paragraph>
+      <Paragraph banner={banner} white={white}>
+        {desc}
+      </Paragraph>
       <Title banner={banner} white={white}>
         {title}
       </Title>

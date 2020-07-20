@@ -26,7 +26,7 @@ function Section({ children, bg }) {
         <BackgroundImage
           tag={`article`}
           fluid={[
-            "radial-gradient(circle at center, rgba(0,0,0, 0.75), rgba(0,0,0, 0.75))",
+            "radial-gradient(circle at center, rgba(0,0,0, 0.70), rgba(0,0,0, 0.70))",
             data.file.childImageSharp.fluid,
           ]}
           css={[
@@ -34,6 +34,7 @@ function Section({ children, bg }) {
               background-position: center;
               background-size: cover;
               background-attachment: fixed;
+              background-color: black;
             `,
           ]}
         >

@@ -105,14 +105,17 @@ const Slider = () => {
         return (
           <BackgroundImage
             tag={`article`}
-            fluid={image.childImageSharp.fluid}
+            fluid={[
+              "radial-gradient(circle at center, rgba(0,0,0, 0.40), rgba(0,0,0, 0.50))",
+              image.childImageSharp.fluid,
+            ]}
             key={image.id}
-            backgroundColor={`#999`}
             css={[
               css`
                 min-height: 75vh;
                 background-position: top center;
-                background-blend-mode: darken;
+                background-attachment: fixed;
+                background-color: black;
               `,
               tw`bg-cover`,
             ]}
