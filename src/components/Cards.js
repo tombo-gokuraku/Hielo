@@ -12,14 +12,14 @@ const query = graphql`
     pic02: file(relativePath: { eq: "pic02.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 640) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     pic03: file(relativePath: { eq: "pic03.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 640) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
