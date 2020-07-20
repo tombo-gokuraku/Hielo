@@ -33,5 +33,11 @@ module.exports = {
     "gatsby-plugin-eslint",
     "gatsby-plugin-emotion",
     "@danbruegge/gatsby-plugin-stylelint",
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
   ],
 }
