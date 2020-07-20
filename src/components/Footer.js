@@ -14,18 +14,22 @@ const socialLinkData = [
   {
     icon: faTwitter,
     url: "https://twitter.com/home",
+    ariaLabel: "go to twitter",
   },
   {
     icon: faFacebook,
     url: "https://www.facebook.com/",
+    ariaLabel: "go to facebook",
   },
   {
     icon: faInstagram,
     url: "https://www.instagram.com/",
+    ariaLabel: "go to instagram",
   },
   {
     icon: faEnvelope,
     url: "mailto:hogepiyo@example.com",
+    ariaLabel: "mail to hogepiyo@example.com",
   },
 ]
 
@@ -36,7 +40,12 @@ function Footer() {
         {socialLinkData.map((link, index) => {
           return (
             <li key={index}>
-              <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.ariaLabel}
+              >
                 <FontAwesomeIcon
                   icon={link.icon}
                   tw="m-2 text-3xl hover:text-white"

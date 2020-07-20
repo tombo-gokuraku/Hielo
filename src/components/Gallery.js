@@ -32,6 +32,7 @@ function Gallery() {
             href="/"
             key={image.id}
             tw="w-full m-2 border-8 border-white rounded md:w-5/12"
+            aria-label="go to home"
           >
             <Image fluid={image.childImageSharp.fluid} />
           </a>
