@@ -59,7 +59,7 @@ const Slider = () => {
       ) {
         images: nodes {
           childImageSharp {
-            fluid(maxWidth: 1500, quality: 85) {
+            fluid(maxWidth: 1200, quality: 75) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
