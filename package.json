@@ -75,5 +75,9 @@
       "debug": false,
       "hasSuggestions": true
     }
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
