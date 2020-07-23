@@ -2,32 +2,26 @@
 import { jsx } from "@emotion/core"
 import "twin.macro"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faTwitter,
-  faInstagram,
-  faFacebook,
-} from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import { GrTwitter, GrFacebook, GrInstagram, GrMail } from "react-icons/gr"
 
 const socialLinkData = [
   {
-    icon: faTwitter,
+    icon: <GrTwitter />,
     url: "https://twitter.com/home",
     ariaLabel: "go to twitter",
   },
   {
-    icon: faFacebook,
+    icon: <GrFacebook />,
     url: "https://www.facebook.com/",
     ariaLabel: "go to facebook",
   },
   {
-    icon: faInstagram,
+    icon: <GrInstagram />,
     url: "https://www.instagram.com/",
     ariaLabel: "go to instagram",
   },
   {
-    icon: faEnvelope,
+    icon: <GrMail />,
     url: "mailto:hogepiyo@example.com",
     ariaLabel: "mail to hogepiyo@example.com",
   },
@@ -46,10 +40,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 aria-label={link.ariaLabel}
               >
-                <FontAwesomeIcon
-                  icon={link.icon}
-                  tw="m-2 text-3xl hover:text-white"
-                />
+                <div tw="m-2 text-3xl hover:text-white">{link.icon}</div>
               </a>
             </li>
           )

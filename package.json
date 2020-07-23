@@ -28,6 +28,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^3.10.0",
     "react-slick": "^0.26.1",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^1.4.6",
