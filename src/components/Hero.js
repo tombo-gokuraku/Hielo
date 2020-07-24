@@ -6,7 +6,7 @@ import "twin.macro"
 
 function Hero({ children }) {
   return (
-    <div tw="relative">
+    <div id="top" tw="relative">
       {children}
       <Slider />
     </div>
